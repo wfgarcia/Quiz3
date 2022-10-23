@@ -11,4 +11,4 @@ typedef struct {
 
 } Meal, *PtrToMeal;
 
-typedef const Meal *ptrToConstMeal;
+typedef const Meal;
