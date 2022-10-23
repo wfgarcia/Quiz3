@@ -32,6 +32,12 @@ int check(int sq[3][3]){
         }
     }
 
+    if(sq[0][0] + sq[1][1] + sq[2][2] != 15){
+        isTrue = 0;
+    }
+    if(sq[2][0] + sq[1][1] + sq[0][2] != 15){
+        isTrue = 0;
+    }
 
     return isTrue;
 }
