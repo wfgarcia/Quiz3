@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <limits.h>
 
 int square[3][3]= {
     {0, 0, 0},
@@ -63,8 +64,8 @@ void printFin(int sq[3][3]){
 
 
 // change values 
-void random(){
-    for(int i = sizeof(values); i > 0; i--){
+void new(){
+    for(int i = 8; i > 0; i--){
         int r = (rand() % (i + 1));
         int temp = values[i];
         values[i] = values[r];
@@ -76,8 +77,8 @@ void random(){
 
 
 //generates random grids
-void createGrid(){
-    random();
+void createSq(){
+    new();
     int v = 0;
     for(int i = 0; i < 3; i++){
         for(int j = 0; j < 3; j++){
@@ -89,8 +90,7 @@ void createGrid(){
 
 
 int main(void){
-    srand(time(NULL));
-
+    srand(time(0));
     // declare array
     int puzzle[][3] = {
         {4, 9, 2},
@@ -104,10 +104,22 @@ int main(void){
 
     // loop number of times it takes
     while(found == 0){
-        
+        createSq();
+        count ++;
+
+        if(count > INT_MAX - 1000)  {
+            for (int i = 0; i < 3; i++)
+                for (int j = 0; j < 3; j++)
+                    square[i][j] = puzzle[i][j];
+        }
+
+        if(check(square) == 1){
+            found = 1;
+        }
     }
 
-
+    printf("Found square in %d attempts\n", count);
+    printFin(square);
 
 
 }
