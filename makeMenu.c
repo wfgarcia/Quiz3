@@ -4,7 +4,7 @@
 
 #include "meal.h"
 
-meal makeMenu[] =
+Meal makeMenu[]=
 {
     //menu items
 
