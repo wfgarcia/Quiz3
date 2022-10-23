@@ -10,7 +10,31 @@ int square[3][3]= {
 
 int values[9] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
 // check inputs 
+int check(int sq[3][3]){
+    int isTrue = 1;
+    for(int x = 0; x < 3; x++){
+        int xSum = 0;
+        for(int y = 0; y < 3; y++){
+            xSum += sq[x][y];
+        }
+        if(xSum != 15){
+            isTrue = 0;
+        } 
+    }
 
+    for(int y = 0; y < 3; y++){
+        int ySum = 0;
+        for(int x = 0; x < 3; x++){
+            ySum += sq[x][y];
+        }
+        if(ySum != 15){
+            isTrue = 0;
+        }
+    }
+
+
+    return isTrue;
+}
 
 
 
