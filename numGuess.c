@@ -16,10 +16,17 @@ void game(){
 
 int main(){
     int option;
+    int loop = 0;
     //main menu
     mainMenu();
     //decides what to do
-
+    while(loop == 0){
+        scanf("%d", &option);
+        if(option == 1 || option == 2 || option == 3){
+        printf("loop ends");
+        loop ++;
+        }
+    }
     //places number
 
     //quits program
