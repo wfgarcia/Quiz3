@@ -36,8 +36,16 @@ void random(){
 //generates random grids
 void createGrid(){
     random();
-    int n = 0;
+    int v = 0;
+    for(int i = 0; i < 3; i++){
+        for(int j = 0; j < 3; j++){
+            square[i][j] = values[v];
+            v++;
+        }
+    }
 }
+
+
 int main(void){
     srand(time(NULL));
 
