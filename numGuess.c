@@ -13,23 +13,22 @@ void game(int max){
     int answer;
     int done = 0;
     int input;
-    int compare;
     srand(time(NULL));
     //picks number
     answer = (rand() % (max - 1 + 1) - 1);
     //checks number
-    printf("%d", answer);
+    //printf ("%d\n", answer);
+    printf("pick a number between 1 and %d\n", max);
     while(done == 0){
         scanf("%d", &input);
-        compare = answer - input;
-        if(compare < 0 ){
-            printf("too small try again\n\n");
+        if(input < answer ){
+            printf("too small try again\n");
         }
-        if (compare > 0){
-            printf("too big try again\n\n");
+        else if (input > answer){
+            printf("too big try again\n");
         }
-        if (compare == 0){
-            printf("you win\n\n");
+        else{
+            printf("you win\n");
             done++;
         }
     }
@@ -38,18 +37,19 @@ void game(int max){
 
 int main(){
     int option;
-    int loop = 0;
+    int loop1 = 0;
     int Max = 10;
+    int loop2 = 0;
     //main menu
    
     //decides what to do
     
-    while(loop == 0){
-        while(loop == 0){
+    while(loop1 == 0){
+        while(loop2 == 0){
             mainMenu();
             scanf("%d", &option);
             if(option == 1 || option == 2 || option == 3){
-                loop ++;
+                loop2 ++;
             }
         }
         if(option == 1){
@@ -60,8 +60,9 @@ int main(){
         scanf("%d", &Max);
         }
         if(option == 3){
-        loop ++;
+        loop1 ++;
         }
+        loop2 = 0;
     }
     //places number
 
