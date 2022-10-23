@@ -12,23 +12,34 @@ void mainMenu(){
 void game(int max){
     int answer;
     int done = 0;
-    int input;
+    char input;
+    int val;
     srand(time(NULL));
     //picks number
-    answer = (rand() % (max - 1 + 1) - 1);
+    answer = (rand() % max ) + 1;
     //checks number
     //printf ("%d\n", answer);
     printf("pick a number between 1 and %d\n", max);
     while(done == 0){
         scanf("%c", &input);
-        if((int)input < answer ){
+        if((int)input == 'q'){
+            done ++;
+        }
+        else{
+        val = atoi(&input);
+        if(val == 0){
+            continue;
+        }
+        else if((int)val < answer ){
             printf("too small try again\n");
         }
-        else if ((int)input > answer){
+        else if ((int)val > answer){
             printf("too big try again\n");
-        }else{
+        }
+        else{
             printf("you win\n");
             done++;
+        }
         }
     }
     //if number is less than or greater tha
@@ -57,13 +68,13 @@ int main(){
         }
         if(option == 2){
         printf("Set your max value(must be positive):\n");
-        while(loop3){
+        while(loop3 == 0){
             scanf("%d", &Max);
             if(Max < 0){
                 printf("try again the value must be positive");
             }
             else{
-                loop3 ++;
+                loop3++;
             }
         }
         }
@@ -71,6 +82,7 @@ int main(){
         loop1 ++;
         }
         loop2 = 0;
+        loop3 = 0;
     }
     //places number
 
