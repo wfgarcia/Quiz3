@@ -2,13 +2,13 @@
 
 #include <stddef.h>
 
-typedef struct{
+typedef struct {
 
     //properties of meals
     char *name;
 
     double price;
 
-} meal, *ptrToMeal;
+} Meal, *PtrToMeal;
 
-typedef const meal *ptrToConstMeal;
+typedef const Meal *ptrToConstMeal;
