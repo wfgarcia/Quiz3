@@ -20,14 +20,13 @@ void game(int max){
     //printf ("%d\n", answer);
     printf("pick a number between 1 and %d\n", max);
     while(done == 0){
-        scanf("%d", &input);
-        if(input < answer ){
+        scanf("%c", &input);
+        if((int)input < answer ){
             printf("too small try again\n");
         }
-        else if (input > answer){
+        else if ((int)input > answer){
             printf("too big try again\n");
-        }
-        else{
+        }else{
             printf("you win\n");
             done++;
         }
@@ -40,6 +39,7 @@ int main(){
     int loop1 = 0;
     int Max = 10;
     int loop2 = 0;
+    int loop3 = 0;
     //main menu
    
     //decides what to do
@@ -48,7 +48,7 @@ int main(){
         while(loop2 == 0){
             mainMenu();
             scanf("%d", &option);
-            if(option == 1 || option == 2 || option == 3){
+            if((int)option == 1 || (int)option == 2 || (int)option == 3){
                 loop2 ++;
             }
         }
@@ -56,8 +56,16 @@ int main(){
         game(Max);
         }
         if(option == 2){
-        printf("Set your max value:\n");
-        scanf("%d", &Max);
+        printf("Set your max value(must be positive):\n");
+        while(loop3){
+            scanf("%d", &Max);
+            if(Max < 0){
+                printf("try again the value must be positive");
+            }
+            else{
+                loop3 ++;
+            }
+        }
         }
         if(option == 3){
         loop1 ++;
