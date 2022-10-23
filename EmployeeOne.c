@@ -51,3 +51,13 @@ PtrToEmployee seachEmployeeByPhone(PtrToConstEmployee ptr, int tableSize, char *
     }
     return NULL;
 }
+
+PtrToEmployee seachEmployeeBySalary(PtrToConstEmployee ptr, int tableSize, double targetSalary){
+    const PtrToConstEmployee endPtr = ptr + tableSize;
+
+    for(; ptr < endPtr; ptr++){
+        if(ptr->salary == targetSalary)
+            return(PtrToEmployee) ptr;
+    }
+    return NULL;
+}
