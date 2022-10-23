@@ -46,7 +46,19 @@ int check(int sq[3][3]){
 
 
 // print final array
+void printFin(int sq[3][3]){
+    printf("\n");
 
+    for(int i =0; i < 3; i++){
+        for(int j = 0; j < 3; j++){
+            if(j == 0){
+                printf("[ ");
+            }
+            printf("%d ", sq[i][j]);
+        }
+        printf("]\n");
+    }
+}
 
 
 
