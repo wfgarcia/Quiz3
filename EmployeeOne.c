@@ -1,6 +1,6 @@
 #include <string.h> 
 
-#include "employee.h" 
+#include "Employee.h" 
 
 PtrToEmployee searchEmployeeByNumber(PtrToConstEmployee ptr, int tableSize, long targetNumber){ 
 
@@ -42,7 +42,7 @@ PtrToEmployee searchEmployeeByName(PtrToConstEmployee ptr, int tableSize, char *
 
 } 
 
-PtrToEmployee seachEmployeeByPhone(PtrToConstEmployee ptr, int tableSize, char * targetPhone){
+PtrToEmployee searchEmployeeByPhone(PtrToConstEmployee ptr, int tableSize, char * targetPhone){
     const PtrToConstEmployee endPtr = ptr + tableSize;
 
     for(; ptr < endPtr; ptr++){
@@ -52,7 +52,7 @@ PtrToEmployee seachEmployeeByPhone(PtrToConstEmployee ptr, int tableSize, char *
     return NULL;
 }
 
-PtrToEmployee seachEmployeeBySalary(PtrToConstEmployee ptr, int tableSize, double targetSalary){
+PtrToEmployee searchEmployeeBySalary(PtrToConstEmployee ptr, int tableSize, double targetSalary){
     const PtrToConstEmployee endPtr = ptr + tableSize;
 
     for(; ptr < endPtr; ptr++){
