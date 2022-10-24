@@ -1,6 +1,6 @@
 #include <string.h> 
 
-#include "employee.h" 
+#include "Employee.h" 
 
 //NOTE: 5 functions have been defined below 
 
@@ -95,7 +95,7 @@ PtrToEmployee searchEmployeeByPhone(PtrToConstEmployee ptr, int size, char* phon
     return searchEmployeeTable(ptr, size, phone, compareEmployeePhone);
 }
 
-PtrToEmployee searchEmployeeSalary(PtrToConstEmployee ptr, int size, double salary)
+PtrToEmployee searchEmployeeBySalary(PtrToConstEmployee ptr, int size, double salary)
 {
     return searchEmployeeTable(ptr, size, &salary, compareEmployeeSalary);
 }
